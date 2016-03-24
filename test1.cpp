@@ -8,8 +8,11 @@ using namespace std;
 int main(){
 	double radius;
 	double result;
+	int results=2;
 	cout<<"please input radius:";//将 please input radius:送到显示设备上去
 	cin>>radius;//由键盘上输入一个数，赋值给radius
 	result=radius*radius*3.14;
-	cout<<"The result is"<<result<<"\n";
+	//cout<<"The result is"<<result<<"\n";
+	cout<<"The result is"<<result<<endl;//endl也是输出一个回车，但是相比\n，\n只是输出了一个回车字符，而endl还刷新了缓冲区，相当于std::cout<<'\n'<<std::flush;
+	//所谓刷新缓冲区是指将缓冲区的内容复制并清空缓冲区
 }
