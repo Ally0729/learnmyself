@@ -26,7 +26,7 @@ int main(){
 	//6、7行等价，因为A的ascii码是65(十进制)
 	//cout输出一个字符串相当于拿到字符串指针，从起始位置一直输出直到遇到\0，而+65，表示字符串指针向后移65位后开始输出直到遇到\0
 }*/
-#include <iostream>
+/*#include <iostream>
 #include <string>
 using namespace std;
 using std::string;
@@ -39,4 +39,13 @@ int main(){
 	for(i=1,n=17;n>0;n-=2,i+=1){
 		cout<<string(i,' ')<<string(n,'M')<<string(i,' ')<<endl;
 	}
+}*/
+#include <iostream>//标准库用尖括号引起来
+#include "Sales_item.h"//非标准库用引号引起来，使用这个类，必须把这个类的头文件包含进来
+using namespace std;
+int main(){
+	Sales_item book;
+	cin>>book.price;
+	cout<<book.price<<endl;
+	return 0;//return 0 means normal return
 }
