@@ -55,7 +55,7 @@ int main(){
 	cout<<"my"		"name" "is"
 		"Ally"<<endl;//以空格，回车，制表符分开的多个字符串，实际上可以连成一句，但是切记不能用+相连，因为指针不能相加
 }*/
-#include <iostream>
+/*#include <iostream>
 #include <string>//要使用string类必须包含string标准库头文件
 using namespace std;
 int main(){
@@ -72,4 +72,13 @@ int main(){
 	//string str3=10,'p';	error 有多个初始化式的时候只能使用直接初始化
 	string str4=string(10,'p');//string(10,'p')可以生成一个"pppppppppp"字符串，赋值给str4
 	cout<<str3<<endl<<str4<<endl;
+}*/
+#include <iostream>
+using namespace std;
+int main(){
+	//变量的定义：用于为变量分配存储空间，有时还可以为变量指定初始值，在一个程序中，一个变量有且仅有一个定义
+	//变量的声明：用于向程序表明变量的类型和名字，定义也是声明，当定义变量时我们已经声明了它的类型和名字
+	//也就是说，可以声明不定义，但是定义一定意味着声明了，可以用extern关键字声明不定义
+	extern int i;//声明但是不定义
+	int i;//声明且定义
 }
