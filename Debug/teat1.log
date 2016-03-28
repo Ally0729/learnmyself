@@ -1,0 +1,16 @@
+﻿Build started 2016/3/25 9:15:50.
+     1>Project "E:\MINE\teat1\teat1\teat1.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\teat1.unsuccessfulbuild".
+       ClCompile:
+         e:\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt test1.cpp
+         test1.cpp
+     1>e:\mine\teat1\teat1\test1.cpp(5): error C2955: 'std::basic_string' : use of class template requires template argument list
+                 e:\microsoft visual studio 10.0\vc\include\xstring(521) : see declaration of 'std::basic_string'
+     1>e:\mine\teat1\teat1\test1.cpp(5): error C2955: 'std::basic_string' : use of class template requires template argument list
+                 e:\microsoft visual studio 10.0\vc\include\xstring(521) : see declaration of 'std::basic_string'
+     1>Done Building Project "E:\MINE\teat1\teat1\teat1.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.42

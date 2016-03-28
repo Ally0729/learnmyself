@@ -3,6 +3,7 @@ int main(){
 	std::cout<<"hello world.\n";//"<<"指示将后面的数据送到显示器设备上去,“\+char"表示不可见控制字符
 }//std::cout 指标准库里的cout，避免和程序员自身起名为cout的函数冲突
 */
+
 /*#include <iostream>
 using namespace std;
 int main(){
@@ -16,6 +17,7 @@ int main(){
 	cout<<"The result is"<<result<<endl;//endl也是输出一个回车，但是相比\n，\n只是输出了一个回车字符，而endl还刷新了缓冲区，相当于std::cout<<'\n'<<std::flush;
 	//所谓刷新缓冲区是指将缓冲区的内容复制并清空缓冲区
 }*/
+
 /*#include <iostream>
 using namespace std;
 int main(){
@@ -26,6 +28,7 @@ int main(){
 	//6、7行等价，因为A的ascii码是65(十进制)
 	//cout输出一个字符串相当于拿到字符串指针，从起始位置一直输出直到遇到\0，而+65，表示字符串指针向后移65位后开始输出直到遇到\0
 }*/
+
 /*#include <iostream>
 #include <string>
 using namespace std;
@@ -40,6 +43,7 @@ int main(){
 		cout<<string(i,' ')<<string(n,'M')<<string(i,' ')<<endl;
 	}
 }*/
+
 /*#include <iostream>//标准库用尖括号引起来
 #include "Sales_item.h"//非标准库用引号引起来，使用这个类，必须把这个类的头文件包含进来
 using namespace std;
@@ -49,12 +53,14 @@ int main(){
 	cout<<book.price<<endl;
 	return 0;//return 0 means normal return
 }*/
+
 /*#include <iostream>
 using namespace std;
 int main(){
 	cout<<"my"		"name" "is"
 		"Ally"<<endl;//以空格，回车，制表符分开的多个字符串，实际上可以连成一句，但是切记不能用+相连，因为指针不能相加
 }*/
+
 /*#include <iostream>
 #include <string>//要使用string类必须包含string标准库头文件
 using namespace std;
@@ -73,12 +79,44 @@ int main(){
 	string str4=string(10,'p');//string(10,'p')可以生成一个"pppppppppp"字符串，赋值给str4
 	cout<<str3<<endl<<str4<<endl;
 }*/
-#include <iostream>
+
+/*#include <iostream>
 using namespace std;
+extern int i=0;//对变量进行了初始化，所以extern声明也是定义，但是这样的语句只能位于函数外面
 int main(){
 	//变量的定义：用于为变量分配存储空间，有时还可以为变量指定初始值，在一个程序中，一个变量有且仅有一个定义
-	//变量的声明：用于向程序表明变量的类型和名字，定义也是声明，当定义变量时我们已经声明了它的类型和名字
+	//变量的声明：用于向程序表明变量的类型和名字，定义也是声明，当定义变量时我们已经声明了它的类型和名字,声明可以有很多次
 	//也就是说，可以声明不定义，但是定义一定意味着声明了，可以用extern关键字声明不定义
 	extern int i;//声明但是不定义
 	int i;//声明且定义
+}
+//对于在多个文件中使用的变量，必须有与定义分离的声明（extern声明）
+//变量在一个文件里定义，使用该变量的其他文件中必须包含该变量的声明（不是定义）
+*/
+
+/*#include <iostream>
+#include "other.h"//包含了other.h头文件，获得了OutAgeText()声明，在相应.cpp文件(other.cpp)中，获得OutAgeText()定义
+using namespace std;
+int age;//定义成全局变量
+int main(){
+	age=9;
+    OutAgeText();
+	return 0;
+}*/
+
+/*#include <iostream>
+#include <string>
+using namespace std;
+string str1="Hello World.";
+int main(){
+	cout<<str1<<endl;
+	string str1="Hello";//局部变量覆盖了全局变量，因此局部变量最好和全局变量名字不同
+	cout<<str1<<endl;
+}*/
+
+//定义const对象
+#include <iostream>
+using namespace std;
+int main(){
+	const int bufferSize=512;//const将一个变量变成了一个常数，定义的时候必须初始化，并且以后该变量的值不可以被修改
 }
