@@ -1,0 +1,1 @@
+//extern int age;//只声明不定义

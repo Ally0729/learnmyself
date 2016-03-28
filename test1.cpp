@@ -97,9 +97,8 @@ int main(){
 /*#include <iostream>
 #include "other.h"//包含了other.h头文件，获得了OutAgeText()声明，在相应.cpp文件(other.cpp)中，获得OutAgeText()定义
 using namespace std;
-int age;//定义成全局变量
+int age=9;//定义成全局变量
 int main(){
-	age=9;
     OutAgeText();
 	return 0;
 }*/
@@ -114,9 +113,48 @@ int main(){
 	cout<<str1<<endl;
 }*/
 
-//定义const对象
+/*定义const对象
 #include <iostream>
 using namespace std;
 int main(){
 	const int bufferSize=512;//const将一个变量变成了一个常数，定义的时候必须初始化，并且以后该变量的值不可以被修改
-}
+}*/
+
+//上面例子再写
+//const变量和其他变量不同，在全局作用域声明的cosnt变量是定义该对象的文件的局部变量，此变量只存在于这个文件中，永远不能被其他文件访问
+//如果想让const变量被其他文件引用必须加上extern关键字（一般类型变量会隐式自动加extern关键字，而const变量必须显式加extern关键字）
+/*#include <iostream>
+#include "other.h"//包含了other.h头文件，获得了OutAgeText()声明，在相应.cpp文件(other.cpp)中，获得OutAgeText()定义
+using namespace std;
+extern const int age=9;//age变成常量，不允许被修改，通过extern关键字，使得别的文件也可以访问
+int main(){
+    OutAgeText();
+	return 0;
+}*/
+
+//一般引用
+//使用&表示引用，引用是对象的另外一个名字
+//int i=7;
+//int &refi=i; correct
+//int &refi; error,定义时必须初始化
+//int &ref=7; error,右边必须是一个object
+//ref++;  means i=8
+//int j=ref; means j=8
+
+//const引用是指const对象的引用
+//const int i=9；
+//const int & refi=i; correct
+//const int &refi=9; correct for const 引用 only；
+//一般引用只能绑定到对象，const引用不但可以绑定到对象还可以绑定到字面值
+
+//上面例子再写
+/*#include <iostream>
+#include "test1.h"
+#include "other.h"
+using namespace std;
+int age=9;//age变量要被其他文件引用，因此在本文件中定义成全局变量，在本文件对应的头文件中进行声明不定义
+               //在其他需要引用age变量的文件中，只要include本文件的头文件即可
+int main(){
+	OutAgeText();
+	return 0;
+};*/
